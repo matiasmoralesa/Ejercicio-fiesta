@@ -15,3 +15,10 @@ class FiestaGala(Fiesta):
         costo_gala = self.__costo_fijo_personas * super().__numero_persona
         total = costo_fiesta + costo_gala
         return total        
+    
+    def __str__(self):
+        txt = super().__str__()
+        txt += f'\nCosto Fijo Persona: {self.__costo_fijo_personas}'
+        txt += f'\nCosto fijo: {self.__costo_fijo_personas * super().__numero_persona}'
+        txt += f'\nMenu saludable:{ "Si" if self.__opcion_saludable else "No"}'
+        return txt

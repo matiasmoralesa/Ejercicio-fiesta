@@ -20,3 +20,10 @@ class Fiesta:
         costo_comida = self.__costo_comida_persona * self.__numero_persona
         total = self.__costo_decoracion + costo_comida + self.__bono_extra 
         return total    
+    
+    def __str__(self):
+        txt = f'Numero Personas: {self.__numero_persona}'
+        txt += f'\nCosto Decoracion: {self.__costo_decoracion}'
+        txt += f'\nBono: {self.__bono_extra}'
+        txt += f'\nCosto Comida: {self.__costo_comida_persona * self.__numero_persona}'
+        return txt
