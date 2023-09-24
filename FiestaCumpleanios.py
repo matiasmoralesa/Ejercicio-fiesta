@@ -8,7 +8,7 @@ class FiestaCumpleanios(Fiesta):
     def personalizar_pastel(self,texto_pastel:str):
         self.__texto_pastel = texto_pastel
 
-    def calcurar_costo(self):
+    def calcular_costo(self):
         costo_fiesta: super().calcurar_costo()
         costo_cumpleanios: self.__valor_pastel 
         total = costo_fiesta + costo_cumpleanios

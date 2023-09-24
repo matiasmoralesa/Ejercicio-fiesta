@@ -29,7 +29,7 @@ def cotizar_fiesta_gala():
            gala = FiestaGala(personas)
            gala.calcular_costo_decoracion(decidete('decorar'))
            gala.set_opcion_saludable(decidete('opcion saludable'))
-           total = gala.calcurar_costo
+           total = gala.calcurar_costo()
            print(gala)
            print(f'total: {total}')
         else:
@@ -38,7 +38,21 @@ def cotizar_fiesta_gala():
         print('ERROR.-Debes ingresar un valor entero')    
 
 def cotizar_fiesta_cumpleanios():
-    pass
+    try:
+        personas = int(input('Ingrese numero de personas: '))
+        if personas > 0:
+            cumple = FiestaCumpleanios(personas)
+            cumple.calcular_costo_decoracion(decidete('decorar'))
+            if decidete('personalizar pastel'):
+                texto = input('ingrese texto personalizado') 
+                cumple.personalizar_pastel(texto)     
+            total = cumple.calcular_costo() 
+            print(cumple)
+            print(f'total: {total}')   
+        else:
+            print('ERROR.-Debes ingresar un valor mayor a 1')
+    except:
+        print('ERROR.-Debes ingresar un valor entero')
 
 
 def decidete(texto:str):
